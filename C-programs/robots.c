@@ -18,3 +18,24 @@ int numberOfPaths(int m, int n) {
         return 1;
     return numberOfPaths(m - 1, n) + numberOfPaths(m, n - 1);
 }
+
+/* OR 
+#include <stdio.h>
+
+int main() {
+    int n,m;
+    scanf("%d%d",&n,&m);
+    int am = RM(0,0,n-1,m-1);
+    printf("%d",am);
+}
+int RM(int cr, int cc, int dr, int dc) {
+    if(cr > dr || cc > dc) {
+        return 0;
+    }
+    else if(cr==dr && cc==dc) {
+        return 1;
+    }
+    else {
+        return RM(cr,cc+1,dr,dc) + RM(cr+1,cc,dr,dc);
+    }
+}*/
